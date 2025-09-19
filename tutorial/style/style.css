@@ -286,3 +286,12 @@ footer {
   background-color: #ffcc00;
   color: black;
 }
+
+.message{
+  text-align: center;
+  background: #f9eded;
+  padding: 15px 0px;
+  border: 1px solid #699053;
+  border-radius: 5px;
+  color: red;
+}

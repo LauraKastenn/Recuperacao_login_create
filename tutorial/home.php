@@ -1,3 +1,13 @@
+ <?php 
+ session_start();
+ include ("php/config.php");
+ if(!isset($SESSION['valid'])){
+    header("Location: index.php");
+ }
+ ?>
+
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,6 +22,22 @@
             <p><a href="home.php">Logo</a></p>
             </div>
             <div class="right-links">
+
+ <?php 
+ 
+ $id= $_SESSION ['id'];
+ $query = mysqli_query($con, "SELECT*FROM users WHERE Id=$id");
+
+ while($result = mysqli_fetch_assoc($query)){
+    $res_username = $result['Username'];
+    $res_email = $result['Email'];
+    $res_Age = $result['Age'];
+    $res_Id = $result['Id'];
+ }
+ echo "<a href = 'edit.php?Id=$res_id'>Change Profile</a>";
+
+ ?>
+
                 <a href="#"> Change Profile</a>
                 <a href="logout.php"><button class="btn">Log Out </button></a> 
             </div>

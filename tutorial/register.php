@@ -27,11 +27,11 @@
         echo "<a href='javascript:self.history.back()'><button class= 'btn'>Go Back</button>";
       }else
 
-        mysli_query($con, "INSERT INTO users(Username, Email, Age, Password) VALUES ('username')");
+        mysqli_query($con, "INSERT INTO users(Username, Email, Age, Password) VALUES ('username')");
         echo "<div class='message'>
-        <p> This email is used, Try another One Please!</p>
+        <p> Registration successfully!</p>
         </div> <br>";
-        echo "<a href='javascript:self.history.back()'><button class= 'btn'>Go Back</button>";
+        echo "<a href='index.php'><button class= 'btn'>Go Back</button>";
       }else
 
         ?>
@@ -55,13 +55,14 @@
                     <input type="password" name="password" id="password" required>
                 </div>
                 <div class="field">
-                    <input type="submit" class="btn" name="submit" value="login" required  >
+                    <input type="submit" class="btn" name="submit" value="Register" required  >
                 </div>
                 <div class="links">
                 Already a member? <a href="index.html"><register class="html">Sing In</register></a>
                 </div>
             </form>
         </div>
+        <?php } ?>
     </div>
 </body>
 </html>
