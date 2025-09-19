@@ -17,7 +17,16 @@
             $email = $_POST['email'];
             $age = $_POST['age'];
             $password = $_POST['password'];
-        }
+
+        //verifying the unique email
+        $verify_query = mysqli_query($con, "SELECT Email FROM users WHERE Email='$email'")
+      if (mysqli_num_rows ($verify_query) !=0)  {
+        echo "<div class='message'>
+        <p> This email is used, Try another One Please!"</p>
+        </div> <br>;
+        echo "<a"
+      }
+    }
         ?>
             <header>Sing up</header>
             <form action="" method="post">
