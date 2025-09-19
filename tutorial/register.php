@@ -8,6 +8,17 @@
 <body>
     <div class="container">
         <div class="form-box">
+
+        <?php 
+
+        include ("php/config.php");
+        if (isset($_POST['submit'])){
+            $username = $_POST['username'];
+            $email = $_POST['email'];
+            $age = $_POST['age'];
+            $password = $_POST['password'];
+        }
+        ?>
             <header>Sing up</header>
             <form action="" method="post">
                  <div class="field input">
