@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +12,16 @@
 <body>
     <div class="container">
         <div class="form-box">
+            <?php
+
+            include("php/config.php");
+            if(isset($_POST['submit'])){
+                $email = mysqli_real_escape_string ($con,$_POST['email']);
+                $password = mysqli_real_escape_string ($con,$_POST['email']);
+
+                $result = mysqli_query($con, "SELECT * FROM users WHERE Email = '$email' AND Password = '$password'") or die ("Select Error"); 
+
+            ?>
             <header>Login</header>
             <form action="" method="post">
                 <div class="field">
