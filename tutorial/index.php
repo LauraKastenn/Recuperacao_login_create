@@ -20,7 +20,16 @@
                 $password = mysqli_real_escape_string ($con,$_POST['email']);
 
                 $result = mysqli_query($con, "SELECT * FROM users WHERE Email = '$email' AND Password = '$password'") or die ("Select Error"); 
+                $row = mysqli_fecth_assok($result);
 
+                if(is_array($row) && !empty($row)){
+                    $_SESSION['valid'] = $row ['Email'];
+                    $_SESSION['username'] = $row ['Username'];
+                    $_SESSION['age'] = $row ['Age'];
+                    $_SESSION['id'] = $row ['Id'];
+                }else{
+                    echo  
+                }
             ?>
             <header>Login</header>
             <form action="" method="post">
