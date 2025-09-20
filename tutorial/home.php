@@ -29,7 +29,7 @@
  $query = mysqli_query($con, "SELECT*FROM users WHERE Id=$id");
 
  while($result = mysqli_fetch_assoc($query)){
-    $res_username = $result['Username'];
+    $res_Uname = $result['Username'];
     $res_email = $result['Email'];
     $res_Age = $result['Age'];
     $res_Id = $result['Id'];
@@ -39,22 +39,22 @@
  ?>
 
                 <a href="#"> Change Profile</a>
-                <a href="logout.php"><button class="btn">Log Out </button></a> 
+                <a href="php/logout.php"><button class="btn">Log Out </button></a> 
             </div>
     </div>
     <main>
         <div class="main-box top">
             <div class="top">
                 <div class="box">
-                    <p>Hello <b>Ludiflex</b>, Welcome</p>
+                    <p>Hello <b><?php echo $resUname?> </b>, Welcome</p>
                 </div>
                 <div class="box">
-                    <p>Your email is <b>123@gmail.com</b>.</p>
+                    <p>Your email is <b><?php echo $resemail?> </b>.</p>
                 </div>
             </div>
             <div class="bottom">
                 <div class="box">
-                    <p>And you are <b>20 years old</b>.</p>
+                    <p>And you are <b><?php echo $age?> </b>.</p>
                 </div>
             </div>
         </div>

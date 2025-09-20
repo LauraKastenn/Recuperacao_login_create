@@ -18,7 +18,7 @@
         $email = mysqli_real_escape_string($con, $_POST['email']);
     
         $result = mysqli_query($con,"SELECT * FROM users WHERE Email= $email AND PASSWORD= 'password'") or die("Select Error");
-        $row = mysqli_fecth_assok($result);
+        $row = mysqli_fetch_assoc($result);
 }
                 if(is_array($row) && !empty($row)){
                     $_SESSION['valid'] = $row ['Email'];
